@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        @yield('title', 'Default title')
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    
+    <!-- Include the Header partial -->
+
+    @include('frontend.layout.header')
+
+    <!-- Include the topbar partial -->
+
+    @include('frontend.layout.topbar')
+
+    <!-- include the footer partial -->
+
+    @include('frontend.layout.footer')
+
+    
+</body>
+</html>
