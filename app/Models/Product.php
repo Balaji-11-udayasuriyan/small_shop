@@ -48,4 +48,5 @@ class Product extends Model
     {
         return env('DOMAIN_URL').Storage::url($this->image_path);
     }
+
 }
