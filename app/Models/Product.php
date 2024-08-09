@@ -38,11 +38,6 @@ class Product extends Model
 
         return $this->belongsTo(brand::class);
     }
-    public function orderitem()
-    {
-
-        return $this->hasMany(OrderItem::class);
-    }
 
     public function getImagePath()
     {
