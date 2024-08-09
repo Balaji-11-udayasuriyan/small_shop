@@ -29,6 +29,6 @@ class Brand extends Model
 
     public function getImagePath()
     {
-        return env('DOMAIN_URL').Storage::url($this->image_path);
+        return env('DOMAIN_URL') . Storage::url($this->image_path);
     }
 }
