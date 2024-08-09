@@ -66,7 +66,8 @@ class ProductResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image_path'),
+                Tables\Columns\ImageColumn::make('image_path')
+                    ->size(200),
                 Tables\Columns\TextColumn::make('qty')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('alert_stock')
