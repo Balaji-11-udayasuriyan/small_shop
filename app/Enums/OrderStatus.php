@@ -1,37 +1,40 @@
-<?php 
+<?php
 
 namespace App\Enums;
 
-enum OrderStatus: String
-
+enum OrderStatus: string
 {
-    case APPOINTMENT = 'APPOINTMENT';
+    case ORDER_PLACED = 'ORDER PLACED';
 
-    case PLACE_AN_ORDER = 'PLACE AN ORDER';
+    case PAYMENT_CONFIRMED = 'PAYMENT CONFIRMED';
 
-    case FABRIC_DISPATCHED = 'FABRIC DISPATCHED';
+    case ORDER_PROCESSING = 'ORDER PROCESSING';
 
-    case FABRIC_RECEIVED = 'FABRIC RECEIVED';
+    case PACKAGING = 'PACKAGING';
 
-    case MANUFACTURING = 'MANFACTURING';
+    case SHIPPED = 'SHIPPED';
 
-    case FINISHING = 'FINISHING';
+    case IN_TRANSIT = 'IN TRANSIT';
 
-    case GARMENT_COMPLETED = 'GARMENT COMPLETED';
+    case OUT_FOR_DELIVERY = 'OUT FOR DELIVERY';
 
-    case ALTERATON_1 = 'ALTERATION 1';
+    case DELIVERED = 'DELIVERED';
+
+    case RETURN_REQUESTED = 'RETURN REQUESTED';
+
+    case RETURNED = 'RETURNED';
     
-    case ALTERATON_2 = 'ALTERATION 2';
-
-    case DELIVERY = 'DELIVERY';
-
-    public static function getValues(): array
+    case CANCELLED = 'CANCELLED';
+    
+    public static function getValue(): array
     {
         return array_column(OrderStatus::cases(), 'value');
     }
 
     public static function getKeyValue(): array
     {
-        return array_column(OrderStatus::cases(),'value'.'key');
+        return array_column(OrderStatus::cases(), 'value', 'key');
     }
+    
 }
+ 
