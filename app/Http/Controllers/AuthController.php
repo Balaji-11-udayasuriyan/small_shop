@@ -128,5 +128,22 @@ class AuthController extends Controller
         return view('frontend/forget_password');
     }
 
-    
+    public function role(Request $request)
+    {
+        return view('frontend/role');
+    }
+
+    public function category(Request $request)
+    {
+        return view('frontend/category');
+    }
+  
+    public function order(Request $request)
+    {
+        return view('frontend/order');
+    }
+    public function cart(Request $request)
+    {
+        return view('frontend/cart');
+    }
 }
