@@ -50,7 +50,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function carts(): HasMany
+    public function cartItems(): HasMany
     {
         return $this->hasMany(Cart::class, 'customer_id');
     }
@@ -59,4 +59,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Orders::class, 'customer_id');
     }
+
+
 }
