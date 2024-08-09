@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('price',10,2)->nullable();
             $table->string('description')->nullable();
-            $table->string('image_path')->nullable();
+            $table->string('image_path')->default('no_image_available.png')->nullable();
             $table->string('qty')->nullable();
             $table->string('alert_stock')->default(0);
 
