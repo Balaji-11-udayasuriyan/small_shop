@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->decimal('total_amount',10,2);
 
-            $table->string('order_status')->default(OrderStatus::APPOINTMENT);
+            $table->string('order_status')->default(OrderStatus::ORDER_PLACED);
 
             $table->string('payment_method')->default(PaymentMethod::CASH);
 
