@@ -40,6 +40,8 @@ class BrandResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\ImageColumn::make('image_path')
+                    ->width(100)
+                    ->height(100)
 
                     ->getStateUsing(fn (Brand $record): string=> $record->getImagePath()),
 
