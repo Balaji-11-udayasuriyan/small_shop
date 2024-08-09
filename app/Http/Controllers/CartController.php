@@ -20,6 +20,8 @@ class CartController extends Controller
 
             $carts = Cart::where('customer_id', $customer->id)->get();
 
+            // dd($carts);
+
             return view('frontend.cart', compact('carts'));
         } catch (ModelNotFoundException $e) {
             // Handle the case where the product is not found
@@ -34,7 +36,7 @@ class CartController extends Controller
         $customer_id = $user->id;
 
         $product_id = $request->input('product_id');
-        $qty = $request->input('qty', 1);
+        $qty = $request->input('qty',1);
 
         // Retrieve the product
         $product = Product::find($product_id);
@@ -60,7 +62,7 @@ class CartController extends Controller
             Cart::create([
                 'product_id' => $product_id,
                 'customer_id' => $user->id,
-                'qty' => 1,
+                'qty' => $qty,
             ]);
             
             return redirect()->back()->with('success', $product->name . " added to your cart." );

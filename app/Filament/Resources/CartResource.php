@@ -25,12 +25,12 @@ class CartResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\SelectInput::make('customer_id')
+                Forms\Components\Select::make('customer_id')
                     ->required()
-                    ->options(user::class),
-                Forms\Components\TextInput::make('product_id')
+                    ->relationship("user","name"),
+                Forms\Components\Select::make('product_id')
                     ->required()
-                    ->numeric(),
+                    ->relationship("product","name"),
                 Forms\Components\TextInput::make('qty')
                     ->required()
                     ->numeric()
@@ -42,10 +42,10 @@ class CartResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('customer_id')
+                Tables\Columns\TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('product_id')
+                Tables\Columns\TextColumn::make('product.name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('qty')
