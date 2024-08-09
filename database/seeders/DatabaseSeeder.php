@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Cart;
+use App\Models\Brand;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -17,28 +22,70 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin')
-        ]);
+            User::factory()->create([
+                'name' => 'admin',
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('admin')
+            ]);
 
         $roles= [
-        [
-            'name'=>'Admin'
-        ],
-        [
-            'name'=>'Customer'
-        ],
-        [
-            'name'=>'Delivery'
-        ],
-    ];
+            
+            ['name'=>'Admin'],
 
-    foreach ($roles as $row)
-    {
-        Role::create($row);
-    }
+            ['name'=>'Customer'],
+
+            ['name'=>'Delivery'],
+
+        ];
+
+        foreach ($roles as $row)
+        {
+            Role::create($row);
+        }
+
+
+        $categories =[ 
+            ['name' => 'Pen'],
+            ['name' => 'Pencil'],
+            ['name' => 'Scale'],
+            
+        ];
+
+        Category::insert($categories);
+
+        $carts=[
+            'customer_id'=>1,
+            'product_id'=>2,
+            'qty'=>100,
+        ];
+
+        Cart::insert($carts);
+
+        $brands = [
+
+            [ 'name'=>'hp'],
+            [ 'name'=>'Dell'],
+            [ 'name'=>'Intel'],
+            [ 'name'=>'Acer'],
+            [ 'name'=>'Lenova'],
+
+        ];
+
+        Brand::insert($brands);
+
+        $products=[
+            [
+                'brand_id' => 1,
+                'category_id' => 1,
+                'name' => 'hp',
+                'description'=>'laptop',
+                'qty'=>200,
+                'alert_stock'=>20
+            ],
+        ];
+
+        Product::insert($products);
+    
     }
 
 
