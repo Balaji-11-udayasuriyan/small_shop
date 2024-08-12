@@ -23,6 +23,7 @@ Route::get('/order', [AuthController::class, 'order'])->name('home.order');
 Route::get('/role', [AuthController::class, 'role'])->name('home.role');
 Route::get('/category', [AuthController::class, 'category'])->name('home.category');
 
+
 //---------------------------------------------------------------------------------------------------------------------//
 
 use App\Http\Controllers\HomeController;
@@ -71,6 +72,7 @@ Route::get('order/history/{id}', [OrderController::class, 'order_history'])->nam
 
 // Order show Route
 Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
+
 
 
 
