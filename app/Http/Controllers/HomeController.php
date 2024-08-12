@@ -34,7 +34,7 @@ class HomeController extends Controller
         $data = [
             'product' => $query->get(),
             'categories' => $categories
-        ];
+        ]; 
 
         return view('frontend/home', $data);
     }
