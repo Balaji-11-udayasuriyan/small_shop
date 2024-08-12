@@ -146,4 +146,9 @@ class AuthController extends Controller
     {
         return view('frontend/cart');
     }
+
+    public function order_history(Request $request)
+    {
+        return view('frontend/order_history');
+    }
 }
