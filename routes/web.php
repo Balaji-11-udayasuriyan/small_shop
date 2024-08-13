@@ -77,6 +77,8 @@ Route::get('/order/{id}', [OrderController::class, 'show'])->name('order.show');
 
 
 
+
+
 use App\Http\Controllers\InvoiceController;
 
     Route::get('/invoice/generate-pdf/{id}', [InvoiceController::class, 'generateInvoicePdf'])->name('invoice.generate-pdf');
