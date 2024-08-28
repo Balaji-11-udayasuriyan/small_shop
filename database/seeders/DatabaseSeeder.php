@@ -61,15 +61,7 @@ class DatabaseSeeder extends Seeder
 
         Cart::insert($carts);
 
-        $brands = [
 
-            [ 'name'=>'hp'],
-            [ 'name'=>'Dell'],
-            [ 'name'=>'Intel'],
-            [ 'name'=>'Acer'],
-            [ 'name'=>'Lenova'],
-
-        ];
 
         Brand::insert($brands);
 
